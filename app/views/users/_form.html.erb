@@ -11,7 +11,11 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+
+  <%= form.text_field :first_name, autofocus: true, class: "form-control margin-bottom-md", placeholder: "first name"%>
+  <%= form.text_field :last_name, class: "form-control margin-bottom-md", placeholder: "last name"%>
+  <%= form.email_field :email, class: "form-control margin-bottom-md", placeholder: "email"%>
+
+  <%= form.submit class: "btn btn-primary margin-bottom-md" %>
 <% end %>
+

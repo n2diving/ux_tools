@@ -1,5 +1,11 @@
 class EmpathyMapRecord < ApplicationRecord
   belongs_to :empathy_map
+
+  TYPES = %w[Thoughts Feels Hears Sights Do Pains Gains]
+
+  def self.types
+    TYPES
+  end
 end
 
 # == Schema Information

@@ -1,18 +1,20 @@
-<div class="row">
-  <div class="col-12 text-center">
-    <h2 class="margin-bottom-md">Sign up</h2>
+<div class="mx-auto text-center">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h2 class="margin-bottom-md">Sign up</h2>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
 
-      <%= f.email_field :email, class: "form-control margin-bottom-md", autofocus: true, placeholder: "Email" %>
-      <%= f.password_field :password, class: "form-control margin-bottom-md", autocomplete: "off", placeholder: "Password" %>
-      <%= f.password_field :password_confirmation, class: "form-control margin-bottom-md", autocomplete: "off", placeholder: "Password confirmation" %>
+        <%= f.email_field :email, class: "form-control margin-bottom-md", autofocus: true, placeholder: "Email" %>
+        <%= f.password_field :password, class: "form-control margin-bottom-md", autocomplete: "off", placeholder: "Password" %>
+        <%= f.password_field :password_confirmation, class: "form-control margin-bottom-md", autocomplete: "off", placeholder: "Password confirmation" %>
 
-      <%= f.submit "Sign up", class: "btn btn-primary margin-bottom-md" %>
-    <% end %>
+        <%= f.submit "Sign up", class: "btn btn-primary margin-bottom-md" %>
+      <% end %>
 
-    <%= render "devise/shared/links" %>
+      <%= render "devise/shared/links" %>
 
+    </div>
   </div>
 </div>
