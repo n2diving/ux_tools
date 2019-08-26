@@ -7,3 +7,8 @@
 @import "mixins/browser_overrides";
 @import "mixins/text_styling";
 @import "mixins/utilities";
+
+
+.navbar-brand img {
+  max-width: 18rem;
+}

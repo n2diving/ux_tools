@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Empathy Maps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @empathy_maps.each do |empathy_map| %>
+      <tr>
+        <td><%= empathy_map.user %></td>
+        <td><%= link_to 'Show', empathy_map %></td>
+        <td><%= link_to 'Edit', edit_empathy_map_path(empathy_map) %></td>
+        <td><%= link_to 'Destroy', empathy_map, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Empathy Map', new_empathy_map_path %>

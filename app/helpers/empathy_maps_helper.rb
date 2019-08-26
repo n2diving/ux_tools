@@ -1,0 +1,2 @@
+module EmpathyMapsHelper
+end

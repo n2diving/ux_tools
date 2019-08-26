@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Empathy map:</strong>
+  <%= @empathy_map_record.empathy_map %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @empathy_map_record.type %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @empathy_map_record.group %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @empathy_map_record.position %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @empathy_map_record.text %>
+</p>
+
+<%= link_to 'Edit', edit_empathy_map_record_path(@empathy_map_record) %> |
+<%= link_to 'Back', empathy_map_records_path %>

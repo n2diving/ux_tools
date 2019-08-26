@@ -1,0 +1,22 @@
+<%= form_with(model: empathy_map, local: true) do |form| %>
+  <% if empathy_map.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(empathy_map.errors.count, "error") %> prohibited this empathy_map from being saved:</h2>
+
+      <ul>
+      <% empathy_map.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :empathy_map_user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
