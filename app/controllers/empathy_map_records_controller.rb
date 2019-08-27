@@ -14,7 +14,8 @@ class EmpathyMapRecordsController < ApplicationController
 
   # GET /empathy_map_records/new
   def new
-    @empathy_map_record = EmpathyMapRecord.new
+    @empathy_map = EmpathyMap.create(user: current_user)
+    @empathy_map_record = EmpathyMapRecord.new(empathy_map_id: @empathy_map.id)
   end
 
   # GET /empathy_map_records/1/edit
@@ -24,7 +25,8 @@ class EmpathyMapRecordsController < ApplicationController
   # POST /empathy_map_records
   # POST /empathy_map_records.json
   def create
-    @empathy_map_record = EmpathyMapRecord.new(empathy_map_record_params)
+    @empathy_map = EmpathyMap.find_or_create_by(id: params[:empathy_map_id])
+    @empathy_map_record = EmpathyMapRecord.new(empathy_map_record_params.merge(empathy_map_id: @empathy_map.id))
 
     respond_to do |format|
       if @empathy_map_record.save

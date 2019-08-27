@@ -11,32 +11,50 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= form.label :empathy_map_id %>
-    <%= form.text_field :empathy_map_id, id: :empathy_map_record_empathy_map_id, class: "form-control margin-bottom-md" %>
-  </div>
+  <%= form.hidden_field :empathy_map_id, value: @empathy_map.id %>
 
   <!--<div class="form-group">-->
     <!--<%= form.label :type %>-->
     <!--<%= form.text_field :type, id: :empathy_map_record_type, class: "form-control margin-bottom-md" %>-->
   <!--</div>-->
 
-  <%= form.select :type, options_for_select(EmpathyMapRecord.types), { include_blank: "select record type" }, class: "form-control margin-bottom-md", autofocus: true %>
-
-  <div class="form-group">
-    <%= form.label :group %>
-    <%= form.number_field :group, id: :empathy_map_record_group, class: "form-control margin-bottom-md" %>
+  <div class="form-group row">
+    <div class="col">
+      <%= form.select :type, options_for_select(EmpathyMapRecord.types, empathy_map_record.type), { include_blank: "select record type" }, class: "form-control margin-bottom-md", autofocus: true %>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= form.label :position %>
-    <%= form.number_field :position, id: :empathy_map_record_position, class: "form-control margin-bottom-md" %>
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <%= form.label :group %>
+        <%#= form.number_field :group, id: :empathy_map_record_group, class: "form-control margin-bottom-md" %>
+        <%= form.select :group, options_for_select(group_position_numbers, empathy_map_record.group), { include_blank: "select group" }, class: "form-control margin-bottom-md" %>
+
+      </div><!-- end form-group -->
+    </div><!-- end col -->
+
+    <div class="col">
+      <div class="form-group">
+        <%= form.label :position %>
+        <%#= form.number_field :position, id: :empathy_map_record_position, class: "form-control margin-bottom-md" %>
+        <%= form.select :position, options_for_select(group_position_numbers, empathy_map_record.position), { include_blank: "select position" }, class: "form-control margin-bottom-md" %>
+      </div><!-- end form-group -->
+    </div><!-- end col -->
+  </div><!-- end row -->
+
+
+    <div class="form-group row">
+      <div class="col">
+        <%= form.label :text %>
+        <%= form.text_area :text, id: :empathy_map_record_text, class: "form-control margin-bottom-md" %>
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="col">
+      <%= form.submit class: "btn btn-primary margin-bottom-md"%>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= form.label :text %>
-    <%= form.text_area :text, id: :empathy_map_record_text, class: "form-control margin-bottom-md" %>
-  </div>
-
-    <%= form.submit class: "btn btn-primary margin-bottom-md"%>
 <% end %>

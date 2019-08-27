@@ -17,6 +17,7 @@
           <% @empathy_maps.each do |empathy_map| %>
             <tr>
               <td><%= empathy_map.user %></td>
+              <td><%= empathy_map.name %></td>
               <td><%= link_to 'Show', empathy_map %></td>
               <td><%= link_to 'Edit', edit_empathy_map_path(empathy_map) %></td>
               <td><%= link_to 'Destroy', empathy_map, method: :delete, data: { confirm: 'Are you sure?' } %></td>

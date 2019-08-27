@@ -11,6 +11,7 @@ end
 # Table name: empathy_maps
 #
 #  id         :bigint           not null, primary key
+#  name       :string           default("misty moon")
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :bigint

@@ -69,6 +69,6 @@ class EmpathyMapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def empathy_map_params
-      params.require(:empathy_map).permit(:user_id)
+      params.require(:empathy_map).permit(:user_id, :name)
     end
 end
