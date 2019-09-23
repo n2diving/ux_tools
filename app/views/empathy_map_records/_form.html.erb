@@ -1,3 +1,5 @@
+<%= @empathy_map.inspect %>
+
 <%= form_with(model: empathy_map_record, local: true) do |form| %>
   <% if empathy_map_record.errors.any? %>
     <div id="error_explanation">
@@ -11,6 +13,7 @@
     </div>
   <% end %>
 
+  <%= @empathy_map.id %>
   <%= form.hidden_field :empathy_map_id, value: @empathy_map.id %>
 
   <!--<div class="form-group">-->
@@ -20,7 +23,7 @@
 
   <div class="form-group row">
     <div class="col">
-      <%= form.select :type, options_for_select(EmpathyMapRecord.types, empathy_map_record.type), { include_blank: "select record type" }, class: "form-control margin-bottom-md", autofocus: true %>
+      <%= form.select :record_type, options_for_select(EmpathyMapRecord.types, empathy_map_record.record_type), { include_blank: "select record type" }, class: "form-control margin-bottom-md", autofocus: true %>
     </div>
   </div>
 

@@ -15,8 +15,8 @@ end
 #  id             :bigint           not null, primary key
 #  group          :integer
 #  position       :integer
+#  record_type    :string
 #  text           :text
-#  type           :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #  empathy_map_id :bigint

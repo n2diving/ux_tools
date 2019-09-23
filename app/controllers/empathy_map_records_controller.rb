@@ -25,7 +25,7 @@ class EmpathyMapRecordsController < ApplicationController
   # POST /empathy_map_records
   # POST /empathy_map_records.json
   def create
-    @empathy_map = EmpathyMap.find_or_create_by(id: params[:empathy_map_id])
+    @empathy_map = EmpathyMap.find_or_create_by(id: empathy_map_record_params[:empathy_map_id])
     @empathy_map_record = EmpathyMapRecord.new(empathy_map_record_params.merge(empathy_map_id: @empathy_map.id))
 
     respond_to do |format|
@@ -71,6 +71,6 @@ class EmpathyMapRecordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def empathy_map_record_params
-      params.require(:empathy_map_record).permit(:empathy_map_id, :type, :group, :position, :text)
+      params.require(:empathy_map_record).permit(:empathy_map_id, :record_type, :group, :position, :text)
     end
 end

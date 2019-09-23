@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190827044645) do
+ActiveRecord::Schema.define(version: 20190923053123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "empathy_map_records", force: :cascade do |t|
     t.bigint "empathy_map_id"
-    t.string "type"
+    t.string "record_type"
     t.integer "group"
     t.integer "position"
     t.text "text"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 20190827044645) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

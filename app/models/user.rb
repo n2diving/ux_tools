@@ -5,6 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :empathy_maps
+
+  def full_name
+    name = "#{first_name} #{last_name}"
+    name.blank? ? "id: #{id.to_s}" : name
+  end
 end
 
 # == Schema Information
@@ -14,6 +19,8 @@ end
 #  id                     :bigint           not null, primary key
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
+#  first_name             :string
+#  last_name              :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
